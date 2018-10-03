@@ -6,5 +6,25 @@
         <link href="styles.css" rel="stylesheet" />
         <script src="https://unpkg.com/vue"></script>
     </head>
+    <body>
+        <div id="vue-app"> <!-- 이 아이디 안에서만 동작한다 -->
+            <h1>{{greet()}}</h1>
+            <h1>{{greet2('afternoon')}}</h1>
+            <h1>{{greet3('evening')}}</h1>
+            <p>Name : {{name}}</p>
+            <p>Job : {{job}}</p>
+            <a v-bind:href=website>Google</a><br>
+            <a :href=website>Google</a><br>
+            <a :href="website">Google</a><br>
+            <!-- <a v-bind:href={{website}}>Google</a> 동작 X-->
 
+            <input type="text" v-bind:value=name><br>
+            <input type="text" v-bind:value=job><br>
+
+            <span v-html=websiteTag></span>
+
+        </div>
+        <script src="app.js" >
+        </script>
+    </body>
 </html>
